@@ -1,0 +1,41 @@
+.nav-item{
+    padding:6px;
+}
+
+.nav li a{
+    list-style:none;
+    text-decoration: none;
+    color: aliceblue;
+    /*color: #092456;*/
+    transition: all 0.5s ease;
+    transform:translateY(0);
+}
+
+.navusr .nav li a:hover{
+    color: #092456;
+    transform:translateY(-5%);
+}
+
+.nav-btn{
+    padding:10px 0 10px;
+    cursor:pointer;
+    display: none;
+}
+
+.nav-btn button{
+    background-color: #2E58A6;
+    border: none; color: white;
+}
+/*Sub menu*/
+.dropdown-menu{
+    background-color: #2E58A6;
+}
+
+.nav .dropdown-menu li a{
+    color: white;
+    background-color: #2E58A6;
+}
+
+.nav .dropdown-menu li a:hover{
+    color: #092456;
+}

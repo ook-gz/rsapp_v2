@@ -1,0 +1,92 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model habitaciones {
+  id_hab    Int         @id @default(autoincrement())
+  num_hab   Int?
+  tipo_hab  tipo_hab?
+  huespedes huespedes[]
+}
+
+model huespedes {
+  id_huesped    Int          @id @default(autoincrement())
+  nm_huesped    String       @db.VarChar(25)
+  ap_pat        String       @db.VarChar(20)
+  ap_mat        String?      @db.VarChar(20)
+  fecha_llegada DateTime     @db.Date
+  num_acomp     Int?
+  correo        String       @db.VarChar(50)
+  id_hab        Int
+  passwrd       String?      @db.VarChar(25)
+  id_rol        Int?
+  habitaciones  habitaciones @relation(fields: [id_hab], references: [id_hab], onDelete: NoAction, onUpdate: NoAction)
+  roles         roles?       @relation(fields: [id_rol], references: [id_rol], onDelete: NoAction, onUpdate: NoAction, map: "fk_rol_id")
+}
+
+model incidencias {
+  id_incidencia Int     @id @default(autoincrement())
+  descripcion   String?
+  asunto        asunto?
+}
+
+model items {
+  id_item        Int     @id @default(autoincrement())
+  nm_item        String? @db.VarChar(25)
+  cantidad_exist Int?
+}
+
+model pedidos {
+  id_pedido   Int          @id @default(autoincrement())
+  estado      estado?
+  tipo_pedido tipo_pedido?
+}
+
+model personal {
+  id_personal Int     @id @default(autoincrement())
+  nm_prsnl    String? @db.VarChar(45)
+  ap_pat      String? @db.VarChar(45)
+  ap_mat      String? @db.VarChar(45)
+  id_rol      Int?
+  roles       roles?  @relation(fields: [id_rol], references: [id_rol], onDelete: NoAction, onUpdate: NoAction, map: "fk_rol_id")
+}
+
+model roles {
+  id_rol    Int         @id @default(autoincrement())
+  rol       rol?
+  huespedes huespedes[]
+  personal  personal[]
+}
+
+enum asunto {
+  personal
+  instalaciones
+}
+
+enum estado {
+  entregado
+  en_proceso @map("en proceso")
+  recibido
+}
+
+enum rol {
+  huesped
+  hotelAdmin
+  superAdmin
+}
+
+enum tipo_hab {
+  individual
+  familiar
+  matrimonial
+}
+
+enum tipo_pedido {
+  items
+  limpieza
+}
