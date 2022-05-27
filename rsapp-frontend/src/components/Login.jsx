@@ -21,7 +21,7 @@ const Login = () => {
             <Toaster />
             <div className='w-full min-h-screen bg-gray-50 flex flex-col sm:justify-center items-center pt-6 sm:pt-0'>
               <div className='w-full sm:max-w-md p-5 mx-auto'>
-              <h2 className="mb-6 text-center text-3xl font-semibold">Bienvenido a R.S.App</h2>
+              <h2 className="mb-6 text-center text-3xl font-semibold">Bienvenido a R.S.App desde rama Ojndz</h2>
                 <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" onSubmit={handleSubmit}>
                 <img className="m-auto my-1" src={LogoRSA} alt="LogoRSApp" width="200px" height="100px"/>
                     <div className="mb-4">
