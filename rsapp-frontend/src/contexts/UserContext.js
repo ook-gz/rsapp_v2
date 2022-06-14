@@ -47,9 +47,7 @@ const UserProvider = ({ children }) => {
             
             redirect();
         }else{
-            if(errors[0]){
-                toast.error(errors[0].msg);
-            }else{
+            if(errors){;
                 toast.error(errors);
             }
         }       
