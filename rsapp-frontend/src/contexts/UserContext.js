@@ -13,7 +13,6 @@ const UserProvider = ({ children }) => {
         navigate("/rsapp");
     }
 
-
     const [user, setUser] = useState(null)
     const [token, setToken] = useState(null);
 
@@ -31,12 +30,6 @@ const UserProvider = ({ children }) => {
         if (!errors) {
             setToken(Token);
             localStorage.setItem("user", JSON.stringify(Token));
-
-            toast.success(() => (
-                <span>
-                  <b>Bienvenido a RSApp</b>
-                </span>)
-                );
 
             const session = localStorage.getItem("user");
             if(session){

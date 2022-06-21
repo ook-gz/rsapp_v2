@@ -16,7 +16,7 @@ import Recomendaciones from "./views/Recomendaciones";
 import Huespedinfo from "./components/client/Huespedinfo";
 import FormNuevaPass from "./components/FormNuevaPass";
 import FormCambiarPass from "./components/FormCambiarPass";
-import Clima from "./views/Clima";
+import InfoClima from "./views/InfoClima";
 /*componentes para Admin */
 
 
@@ -38,7 +38,7 @@ function App() {
       <Route path="servicios-reportar" element={<FormReporte />} />
       <Route path="recomendaciones" element={<Recomendaciones />} />
       <Route path="huesped-info" element={<Huespedinfo />} />
-      <Route path="clima-info" element={<Clima/>} />
+      <Route path="clima-info" element={<InfoClima/>} />
     </Route>
     <Route path="recuperar-pass" element={<FormNuevaPass />} />
     <Route path="recuperar-pass/:id/:token" element={<FormCambiarPass />} />

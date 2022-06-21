@@ -57,10 +57,13 @@ const Homepage = () => {
                     </div>
                 </div>
 
-                <div class="w-full bg-blue-600 shadow-xl shadow-indigo-200 py-5 px-20 flex justify-between items-center">
-                    <p class=" text-white"> <span class="text-4xl font-medium">¿Tiene algun incoveniente? </span> <span class="text-lg">Reportelo</span></p>
+                <div className="w-full bg-blue-600 shadow-xl shadow-indigo-200 py-6 px-20 flex justify-between items-center">
+                    <p className="text-white"> 
+                        <span className="text-4xl font-medium">¿Tiene algun incoveniente? </span> 
+                        <span className="text-lg">Reportelo</span>
+                    </p>
                     <Link to="/rsapp/servicios-reportar"> 
-                    <button class="px-5 py-3 font-medium text-slate-700 shadow-xl rounded  
+                    <button className="px-5 py-3 font-medium text-slate-700 shadow-xl rounded  
                     hover:bg-white duration-150 bg-yellow-400 ">Formulario de quejas</button>
                     </Link>
                 </div>
